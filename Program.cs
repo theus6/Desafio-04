@@ -1,5 +1,8 @@
 ﻿using static System.Console; 
 
+// Vars
+string titulo, novapalavra, palavraschave, palavraschave2, instituicao, instituicao2, nomea, nomea2, titulo2;
+
 Artigo a1 = new Artigo();
 Artigo a2 = new Artigo();
 
@@ -19,16 +22,16 @@ at3.Email = "sarahj2010@gmail.com";
 Write(" \n# # # Sistema de Registros de Artigos # # #\n ");
 
 Write("\nQual é o titulo do artigo?\n");
-string titulo = ReadLine();
+titulo = ReadLine();
 
 Write("\nQuais são as palavras chaves?\n");
-string palavraschave = ReadLine();
+palavraschave = ReadLine();
 
 Write("\nQual é a instituição?\n");
-string instituicao = ReadLine();
+instituicao = ReadLine();
 
 Write("\nQual é o nome do autor?\n");
-string nomea = ReadLine();
+nomea = ReadLine();
 
 a1.Registro(at1, titulo, instituicao, palavraschave);
 
@@ -76,16 +79,16 @@ if (op == 1)
     Write(" \n# # # Sistema de Registros de Artigos # # #\n ");
 
     Write("\nQual é o titulo do artigo?\n");
-    string titulo2 = ReadLine();
+    titulo2 = ReadLine();
 
     Write("\nQuais são as palavras chaves?\n");
-    string palavraschave2 = ReadLine();
+    palavraschave2 = ReadLine();
 
     Write("\nQual é a instituição?\n");
-    string instituicao2 = ReadLine();
+    instituicao2 = ReadLine();
 
     Write("\nQual é o nome do autor?\n");
-    string nomea2 = ReadLine();
+    nomea2 = ReadLine();
 
     a2.Registro(at2, titulo2, instituicao2, palavraschave2);
 
@@ -123,8 +126,49 @@ if (op == 1)
     {
         Write("\nError!! Autor não encotrado!!!\n");
     }
+
+Write("Deseja Pesquisar algum artigo?");
+Write("1 = sim || 0 = não");
+int op2 = int.Parse(ReadLine());
+
+if(op == 1)
+{
+    Write("Digite uma palavra chave:");
+    novapalavra = ReadLine();
+
+    if(novapalavra == palavraschave)
+    {
+        Write("Artigo encontrado");
+        Write($"Titulo:{titulo}\n");
+        Write($"Autor:{nomea}\n");
+        Write($"Instituição:{instituicao}\n");
+        Write($"Palavras-Chave:{palavraschave}\n");
+    }
+    else if (novapalavra == palavraschave2)
+    {
+        Write("Artigo encontrado");
+        Write($"Titulo:{titulo2}\n");
+        Write($"Autor:{nomea2}\n");
+        Write($"Instituição:{instituicao2}\n");
+        Write($"Palavras-Chave:{palavraschave2}\n");
+    }
+    else
+    {
+        Write("Palavra chave de artigo não encontrada");
+    }
 }
+
 else
 {
-    Write("Até a próxima ! ! !");
+    Write("Até logo!!!");
 }
+
+}
+else
+{   
+    Write("Até logo!!!");
+}
+
+
+
+ 
